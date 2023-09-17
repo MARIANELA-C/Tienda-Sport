@@ -1,36 +1,34 @@
 
-import { useState, useEffect } from 'react'
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
-import PrimerComponente from './components/PrimerComponente'
+import ItemDetailContainer from './components/ItemDetailContainer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from "./components/Home"
+import About from "./components/About"
+import Cart from "./components/Cart"
+
 
 function App() {
-  const [product, setProduct]= useState([])
 
-  const getProducts = async () => {
-    const response = await fetch("https://fakestoreapi.com/products/")
-    const data = await response.json()
-
-    return data
-  }
-
-  useEffect(() => {
-    getProducts().them((product) => setProduct(product))
-  }, [])
 
   
   return (
     <>
-    <NavBar/>  
-    <ItemListContainer/>
-    {
-      product.map((p)=>{
-        return (
+    <BrowserRouter>
 
-          <PrimerComponente key={p.id} title={p.title} price={p.price}/>
-        )
-      })
-    }
+    <NavBar/> 
+
+    <Routes>
+    {/*<ItemListContainer/>
+    <ItemDetailContainer/>*/}
+    <Route exact path="/" element={<Home/>}/>
+    <Route exact path="/about" element={<About/>}/>
+    <Route exact path="/cart" element={<Cart/>}/>
+    <Route exact path="/item/:id" element={<ItemDetailContainer/>}/>
+    <Route exact path="/categoria/:categoria" element={<ItemListContainer/>}/>
+    </Routes> 
+    
+    </BrowserRouter>
     </>
   
 

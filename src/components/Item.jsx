@@ -1,7 +1,9 @@
-import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button} from '@chakra-ui/react'
+import { Card, CardBody, Image, Stack, Heading, Divider, CardFooter, ButtonGroup, Button} from '@chakra-ui/react'
+import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
+//import ItemDetailContainer from './ItemDetailContainer'
 
-const Item = ({ name, price, stock }) => {
+const Item = ({ name, id }) => {
   return (
     <Card maxW='sm'>
     <CardBody>
@@ -12,20 +14,16 @@ const Item = ({ name, price, stock }) => {
       />
       <Stack mt='6' spacing='3'>
         <Heading size='md'>{name}</Heading>
-        <Text>
-         {stock}
-        </Text>
-        <Text color='blue.600' fontSize='2xl'>
-          $ {price}
-        </Text>
       </Stack>
     </CardBody>
     <Divider />
     <CardFooter>
-      <ButtonGroup spacing='2'>
-        <Button variant='solid' colorScheme='blue'>
+      <ButtonGroup>
+        <Link to={`/item/${id}`}>
+        <Button variant='solid' colorScheme='blue' >
           Detalle
         </Button>
+        </Link>
       </ButtonGroup>
     </CardFooter>
   </Card>
@@ -35,7 +33,8 @@ Item.propTypes ={
   productos:PropTypes.array.isRequired,
   name:PropTypes.string.isRequired,
   price:PropTypes.number.isRequired,
-  stock:PropTypes.number.isRequired
+  stock:PropTypes.number.isRequired,
+  id:PropTypes.number.isRequired
 }
 
 export default Item

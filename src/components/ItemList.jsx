@@ -21,7 +21,7 @@ const ItemList= ({productos}) => {
   )
 }
 ItemList.propTypes = {
-   productos:PropTypes.array.isRequired
+  productos:PropTypes.array.isRequired
 }
 
 export default ItemList
