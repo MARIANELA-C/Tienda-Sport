@@ -21,14 +21,12 @@ const NavBar = () => {
        </MenuButton>
       <MenuList>
         <MenuGroup title='Categorias'>
-          <Link to={`/categoria/${'Zapatillas'}`}>
-          <MenuItem>Zapatillas</MenuItem>
-          </Link>
+         
           <Link to={`/categoria/${'Camperas'}`}>
           <MenuItem>Camperas</MenuItem>
           </Link>
-          <Link to={`/categoria/${'Legins'}`}>
-          <MenuItem>Legins</MenuItem>
+          <Link to={`/categoria/${'Leggins'}`}>
+          <MenuItem>Leggins</MenuItem>
           </Link>
           <Link to={`/categoria/${'Gorras'}`}>
           <MenuItem>Gorras</MenuItem>
