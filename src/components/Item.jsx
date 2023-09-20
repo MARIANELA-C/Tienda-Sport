@@ -1,7 +1,7 @@
 import { Card, CardBody, Image, Stack, Heading, Divider, CardFooter, ButtonGroup, Button} from '@chakra-ui/react'
 import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
-//import ItemDetailContainer from './ItemDetailContainer'
+
 
 const Item = ({ name, id }) => {
   return (

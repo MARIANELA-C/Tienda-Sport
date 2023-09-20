@@ -19,8 +19,7 @@ function App() {
     <NavBar/> 
 
     <Routes>
-    {/*<ItemListContainer/>
-    <ItemDetailContainer/>*/}
+    
     <Route exact path="/" element={<Home/>}/>
     <Route exact path="/about" element={<About/>}/>
     <Route exact path="/cart" element={<Cart/>}/>

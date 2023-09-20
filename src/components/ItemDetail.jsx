@@ -1,13 +1,13 @@
-//import {useParams, useEffect} from 'react-router-dom'
+
 import PropTypes from 'prop-types'
 import {Card, Image, Stack, CardBody, Heading, Text, CardFooter, Button} from '@chakra-ui/react'
 
 const ItemDetail= ({productos}) => {
  
+
   return (
     <div>
-        {
-           productos.map((p) => {
+        {productos.map((p) => {
                 return (
                     <div  key={p.id}>
                     <Card
@@ -50,7 +50,7 @@ const ItemDetail= ({productos}) => {
   )
 }
 ItemDetail.propTypes = {
-   productos:PropTypes.array.isRequired
+  productos:PropTypes.array.isRequired
 }
 
 export default ItemDetail
