@@ -10,6 +10,7 @@ const ItemList= ({productos}) => {
                 return (
                     <Item
                     key={p.id}
+                    id={p.id}
                     name={p.name}
                     price={p.price}
                     stock={p.stock}
@@ -21,7 +22,8 @@ const ItemList= ({productos}) => {
   )
 }
 ItemList.propTypes = {
-  productos:PropTypes.array.isRequired
+  productos:PropTypes.array.isRequired,
+ id:PropTypes.array.isRequired
 }
 
 export default ItemList

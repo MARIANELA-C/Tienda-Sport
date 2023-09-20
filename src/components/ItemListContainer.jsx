@@ -5,9 +5,9 @@ import {useParams} from 'react-router-dom'
 const ItemListContainer = () => {
   const {categoria} = useParams()
   const productos = [
-    {id: 1, name: "Producto A", price: 1000, descripcion: "Descripcion del producto A", categoria: "Herramientas"},
-    {id: 2, name: "Producto B", price: 2000, descripcio: "Descripcion del producto B", categoria: "Pinceles"},
-    {id: 3, name: "Producto C", price: 3000, descripcion: "Descripcion del producto C", categoria: "Talleres"}
+    {id: 1, name: "Producto A", price: 1000, descripcion: "Descripcion del producto A", categoria: "Camperas"},
+    {id: 2, name: "Producto B", price: 2000, descripcio: "Descripcion del producto B", categoria: "Legins"},
+    {id: 3, name: "Producto C", price: 3000, descripcion: "Descripcion del producto C", categoria: "Gorras"}
   ]
   const mostrarProductos = new Promise((resolve, reject) =>{
     
