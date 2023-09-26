@@ -1,8 +1,16 @@
 
+import {useContext} from 'react'
+import {CartContext} from '../context/ShoppingCartContext'
+
+
 
 const Cart = () => {
+  const {onAdd} = useContext (CartContext)
+  console.log ()
   return (
-    <div>Cart</div>
+     <div>
+      {onAdd}
+      </div>
   )
 }
 

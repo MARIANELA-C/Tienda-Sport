@@ -1,6 +1,7 @@
 
 import PropTypes from 'prop-types'
-import {Card, Image, Stack, CardBody, Heading, Text, CardFooter, Button} from '@chakra-ui/react'
+import {Card, Image, Stack, CardBody, Heading, Text, CardFooter} from '@chakra-ui/react'
+import ItemCount from './ItemCount'
 
 const ItemDetail= ({productos}) => {
  
@@ -33,9 +34,7 @@ const ItemDetail= ({productos}) => {
     </CardBody>
 
     <CardFooter>
-      <Button variant='solid' colorScheme='blue'>
-        AGREGAR AL CARRITO
-      </Button>
+      <ItemCount/>
     </CardFooter>
   </Stack>
 </Card>
