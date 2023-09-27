@@ -1,14 +1,30 @@
-
 import {useContext} from 'react'
-import {CartContext} from '../context/ShoppingCartContext'
+import { CartContext } from '../context/ShoppingCartContext'
+import {useState} from 'react'
 import {ButtonGroup, Button} from '@chakra-ui/react'
 
 
 const ItemCount = () => {
 
-  const {ocultar, setOcultar, counter, setCounter, onAdd, increment, decrement, reset}= useContext (CartContext)
-   
-  
+const [counter, setCounter] = useState(0)
+const [ocultar, setOcultar] = useState(false)
+const { addToCart} = useContext(CartContext)
+
+const increment =() => {
+    if (counter < 10){
+        setCounter(counter + 1)
+    }
+}
+ const decrement =() => {
+    if(counter > 0){
+        setCounter(counter - 1)
+    }
+ }
+
+ const onAdd = (counter) => {
+    addToCart(counter)
+    setOcultar(true)
+ }
   return (
     <>
       {!ocultar &&(
@@ -33,77 +49,3 @@ const ItemCount = () => {
 }
 
 export default ItemCount
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* const [counter, setCounter] = useState(0)
-const [ocultar, setOcultar] = useState(false)
-
-const increment =() => {
-    if (counter < 10){
-        setCounter(counter + 1)
-    }
-}
- const decrement =() => {
-    if(counter > 0){
-        setCounter(counter - 1)
-    }
- }
-
- const onAdd = () => {
-    alert(`Agregaste a tu compra ${counter} productos`)
-    setOcultar(true)
- }
-*/}
