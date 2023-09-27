@@ -1,11 +1,15 @@
-
+import {useContext} from 'react'
+import { CartContext } from '../context/ShoppingCartContext'
 import PropTypes from 'prop-types'
 import {Card, Image, Stack, CardBody, Heading, Text, CardFooter} from '@chakra-ui/react'
 import ItemCount from './ItemCount'
 
 const ItemDetail= ({productos}) => {
- 
+  const { addToCart } = useContext(CartContext)
 
+  const onAdd = (counter) => {
+    addToCart(counter)
+  }
   return (
     <div>
         {productos.map((p) => {
@@ -37,13 +41,16 @@ const ItemDetail= ({productos}) => {
                   </CardFooter>
                   </Stack>
                   </Card>
-                   </div>                            
+                   </div>    
+                   
+                  
             )
             })
         }
     </div>
   )
 }
+
 ItemDetail.propTypes = {
   productos:PropTypes.array.isRequired
 }
